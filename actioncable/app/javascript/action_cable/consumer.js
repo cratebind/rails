@@ -63,12 +63,12 @@ export function createWebSocketURL(url) {
   }
 
   if (url && !/^wss?:/i.test(url)) {
-    const a = document.createElement("a")
-    a.href = url
+    // const a = document.createElement("a")
+    // a.href = url
     // Fix populating Location properties in IE. Otherwise, protocol will be blank.
-    a.href = a.href
-    a.protocol = a.protocol.replace("http", "ws")
-    return a.href
+    // a.href = a.href
+    // a.protocol = a.protocol.replace("http", "ws")
+    return url;
   } else {
     return url
   }

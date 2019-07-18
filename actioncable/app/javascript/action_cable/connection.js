@@ -67,9 +67,8 @@ class Connection {
   }
 
   getProtocol() {
-    if (this.webSocket) {
-      return this.webSocket.protocol
-    }
+    // force protocol because we can't check window in react native
+    return 'actioncable-v1-json'
   }
 
   isOpen() {
